@@ -1,19 +1,88 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Web Programming | Ingrid Schmaedecke | Project 1</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretty Pretty</title>
 
-	<link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body{
+            margin: 0;
+        }
+
+        a{
+            font-family: sans-serif;
+            font-size: 5vw;
+            border: 1px solid red;
+            border-radius: 50%;
+            background-color: rgb(215, 255, 155);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1vw;
+        }
+        a:link{
+            text-decoration: none;
+            color: red;
+
+        }
+        a:visited{
+            text-decoration: none;
+            color: red;
+            background-color: rgb(202, 255, 122);
+
+        }
+
+        a:hover{
+            text-decoration: none;
+            box-shadow: 10px 10px 20px red;  
+            transform: rotate(-90deg) 1s;
+        }
+
+        a:active{
+            text-decoration: none;
+        }
+
+
+        .container{
+            background: #fafafa;    
+        }
+
+        .content{
+            width: 100vw;
+            height: 100vh;
+            padding: 20px;
+            background: lightpink;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap:2vh;
+            align-items: stretch;            
+        }
+
+        
+
+
+
+    </style>
 </head>
 
 <body>
+    <div class="container">
+        <div class="content">
+            <a href="https://en.wikipedia.org/wiki/You" target="_blank"><p>YOU</p></a>
+            <a href="https://en.wikipedia.org/wiki/Are" target="_blank"><p>ARE</p></a>
+            <a href="https://en.wikipedia.org/wiki/A" target="_blank"><p>A</p></a>
+            <a href="https://en.wikipedia.org/wiki/Pretty" target="_blank"><p>PRETTY</p></a>
+            <a href="https://en.wikipedia.org/wiki/Person" target="_blank"><p>PERSON</p></a>
+            <a href="https://en.wikipedia.org/wiki/!" target="_blank"><p>!!!!</p></a>
 
-	<p class="test-class5">
-		This will be the text!!! This will be the text!!! This will be the text!!! This will be the text!!! This will be the text!!! This will be the text!!! This will be the text!!! This will be the text!!! This will be the text!!! This will be the text!!! This will be the text!!! 
-	</p>
-
+        </div>
+    </div>
 </body>
-
 </html>
