@@ -7,8 +7,9 @@ body{
     padding:0;
     font-family: 'Rubik 80s Fade', sans-serif;
     font-size: 40px;
-    color:brown;
-    background-color: rgb(116, 79, 30);
+    /* color:brown; */
+    color:blue;
+    /* background-color: rgb(116, 79, 30); */
 }
 
 .container{

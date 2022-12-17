@@ -1,26 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timer</title>
+<style>
+@font-face {
+font-family: "SevenSegment";
+src: local("DSEG7Classic-Bold"), url("DSEG7Classic-Bold.ttf");
+}
 
-    <link rel="stylesheet" href="style.css">
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
 
-    <title>Landing Page</title>
+p {
+    font-family: SevenSegment, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 40vw;
+    color: red;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    padding: 120px;
+}
+#faint{
+  color: rgba(255, 0, 0, 0.1);
+  z-index: 1;
+  filter: blur(5px);
+}
 
+div {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+
+</style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="content">
-            <p>WIKI PÉ</p>
-        </div>
-    </div>
+
+<div id="trigger">
+    <p id="countdown"></p>
+    <p id="faint">00</p>
+</div>
 
 
-    <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9913.772241902552!2d-80.05633726758566!3d43.234555891296154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c888305235b95%3A0xdd7143c024260e53!2sHwy%2052%2C%20Hamilton%2C%20ON%2C%20Canad%C3%A1!5e0!3m2!1spt-BR!2sus!4v1668782584550!5m2!1spt-BR!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+<script>
+let min = 19
+let max = 25
+
+function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+console.log(getRandomArbitrary(min,max));
+
+let numberOfSeconds = getRandomArbitrary(min,max)
+
+let countdown = document.getElementById("countdown");
+let trigger = document.getElementById("trigger");
+
+trigger.addEventListener("click", timer);
+
+
+function timer(){
+  trigger.removeEventListener("click", timer);
+  let timeleft = numberOfSeconds;
+  countdown.innerText = timeleft;
+  let downloadTimer = setInterval(function() {
+        timeleft -= 1;
+        countdown.innerText = timeleft;
+        if(timeleft <10){
+          countdown.innerText = "0" + timeleft;
+        }
+        if(timeleft <= 0){
+          trigger.addEventListener("click", timer);
+          clearInterval(downloadTimer); 
+          // event listener only when time is out
+        }
+  }, 1000);
+}
+
+// let i = 0;
+
+// function myLoop() {               //  create a loop function
+
+
+//   setTimeout(function () {        //  call a 3s setTimeout when the loop is called
+
+//     document.documentElement.style.setProperty(`--zindexController`, i);
+//     i++;                          //  increment the counter
+
+//     if (i < 102) {                //  if the counter < 101, call the loop function
+//       setTimeout(myLoop, 0);
+//       console.log('hi');
+//     }
+  
+//     if (i == 102) {
+//     i = 0;
+//     let restart;
+//     clearTimeout(restart);
+//     restart = setTimeout(myLoop, 100);
+//     console.log('hello second if');
+//     }
+//   }, 100)
+// }
+
+// myLoop();                   //  start the loop
+
+
+
+// var timeleft = numberOfSeconds;
+// var downloadTimer = setInterval(function setTimer(){
+//   if(timeleft <= 0){
+//     clearInterval(downloadTimer);
+
+//     document.getElementById("countdown").innerHTML = "0";
+  
+
+//   } else {
+//     document.getElementById("countdown").innerHTML = timeleft;
+//   }
+//   timeleft -= 1;
+// }, 1000);
+
+// if (downloadTimer < 0){
+//   window.addEventListener("click", setInterval())
+//   console.log('hello event listener!');
+// }
+
+
+
+
+
+</script>
+
 </body>
 </html>
