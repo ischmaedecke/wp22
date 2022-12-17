@@ -4,16 +4,27 @@
 }
 body{
     margin: 0;
+    background-color: black;
 }
 #supercontainer{
-    width: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vh;
     height: 100vh;
-    background-color: rgb(255, 81, 107);
+    margin-top: calc(-100vh / 2);
+    margin-left: calc(-100vh / 2);
+    background-color: rgb(201, 201, 201);
     border: 3px solid black;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
     padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .banner:hover{
@@ -30,8 +41,13 @@ p{
 }
 
 .content{
+    width: 50%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap:2vh;
-    align-items: stretch;            
+    grid-template-columns: 1fr;
+    gap: 50px;;   
+    overflow-y: scroll;         
+}
+
+img{
+    width: 100%;
 }
